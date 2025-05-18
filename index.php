@@ -63,7 +63,7 @@ class Transaction {
     }
 }
 
-// Создание массива объектов транзакций
+
 $transactions = [
     new Transaction(1, "2019-01-01", 100.00, "Payment for groceries", "SuperMart"),
     new Transaction(2, "2020-02-15", 75.50, "Dinner with friends", "Local Restaurant"),
@@ -72,20 +72,20 @@ $transactions = [
     new Transaction(5, "2023-03-05", 150.75, "Gym membership", "FitnessClub"),
 ];
 
-// Функция для подсчета общей суммы транзакций
+
 function calculateTotalAmount($transactions) {
     return array_reduce($transactions, function($carry, $item) {
         return $carry + $item->amount;
     }, 0);
 }
 
-// Функция для вычисления среднего значения транзакций
+
 function calculateAverage($transactions) {
     $total = calculateTotalAmount($transactions);
     return count($transactions) > 0 ? $total / count($transactions) : 0;
 }
 
-// Функция для получения массива описаний транзакций
+
 function mapTransactionDescriptions($transactions) {
     return array_map(function($item) {
         return $item->description;
